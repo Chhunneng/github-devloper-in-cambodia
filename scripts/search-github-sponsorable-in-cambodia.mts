@@ -62,16 +62,14 @@ const __dirname = path.dirname(__filename);
 const escapeTable = (text?: string) => text ? text.replace(/\|/g, "｜").replace(/\r?\n/g, " ") : "";
 const persons = results.map((person) => {
   return `
-<div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; height: 150px;">
-  <img src="${person.avatarUrl}" alt="${person.login} Avatar" width="100" style="float: left; margin-right: 10px; border-radius: 2.5px;" />
-  <div>
-    <h3>${person.name ?? person.login ?? ""}</h3>
-    <p>Location: ${person.location ?? "Unknown"}</p>
-    <p style="max-height: 60px; overflow: hidden;">Bio: ${person.bio ?? ""}</p>
-    <a href="${person.url}">GitHub Profile</a>
-  </div>
-</div>
-`;
+  ## ${person.name ?? person.login ?? ""}
+  
+  [<img src="${person.avatarUrl}" alt="${person.login} Avatar" width="100" style="border-radius: 2.5px;" />](${person.url})
+  
+  - **Location:** ${person.location ?? "Unknown"}
+  - **Bio:** ${person.bio ?? ""}
+  - [GitHub Profile](${person.url})
+  `;
 }).join("\n\n");
 
 const totalUsers = results.length;

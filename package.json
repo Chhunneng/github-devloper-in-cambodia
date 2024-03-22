@@ -1,0 +1,16 @@
+{
+  "name": "github-sponsorable-in-cambodia",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "update:resources": "node --loader ts-node/esm ./scripts/search-github-sponsorable-in-cambodia.mts"
+  },
+  "devDependencies": {
+    "@octokit/core": "^4.2.0",
+    "@octokit/plugin-paginate-graphql": "^2.0.1",
+    "@types/node": "18.14.4",
+    "markdown-function": "^2.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

@@ -56,19 +56,15 @@ for await (const result of octokit.graphql.paginate.iterator(query)) {
 }
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// const DATA_DIR = path.join(__dirname, "..", "data");
-// const RESULT_FILE_PATH = path.join(DATA_DIR, "results.json");
-// await fs.writeFile(RESULT_FILE_PATH, JSON.stringify(results, null, 2));
-const escapeTable = (text?: string) => text ? text.replace(/\|/g, "｜").replace(/\r?\n/g, " ") : "";
 const persons = results.map((person) => {
   return `
   ## ${person.name ?? person.login ?? ""}
   
-  | [<img src="${person.avatarUrl}" alt="${person.login} Avatar" width="100" style="border-radius: 2.5px;" />](${person.url}) | 
-  | :---: | 
-  | **Location:** ${person.location ?? "Unknown"} |
-  | **Bio:** ${person.bio ?? ""} |
-  | [GitHub Profile](${person.url}) |
+  [<img src="${person.avatarUrl}" alt="${person.login} Avatar" width="100" style="border-radius: 2.5px;" />](${person.url})
+  
+  - **Location:** ${person.location ?? "Unknown"}
+  - **Bio:** ${person.bio ?? ""}
+  - [GitHub Profile](${person.url})
   `;
 }).join("\n\n");
 

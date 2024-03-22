@@ -64,11 +64,11 @@ const persons = results.map((person) => {
   return `
   ## ${person.name ?? person.login ?? ""}
   
-  [<img src="${person.avatarUrl}" alt="${person.login} Avatar" width="100" style="border-radius: 2.5px;" />](${person.url})
-  
-  - **Location:** ${person.location ?? "Unknown"}
-  - **Bio:** ${person.bio ?? ""}
-  - [GitHub Profile](${person.url})
+  | [<img src="${person.avatarUrl}" alt="${person.login} Avatar" width="100" style="border-radius: 2.5px;" />](${person.url}) | 
+  | :---: | 
+  | **Location:** ${person.location ?? "Unknown"} |
+  | **Bio:** ${person.bio ?? ""} |
+  | [GitHub Profile](${person.url}) |
   `;
 }).join("\n\n");
 

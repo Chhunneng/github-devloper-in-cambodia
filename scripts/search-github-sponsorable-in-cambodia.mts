@@ -71,6 +71,7 @@ const persons = results.map((person) => {
 const totalUsers = results.length;
 const searchResultsLink = "https://github.com/search?q=location%3ACambodia&type=users&ref=simplesearch";
 const myProfileLine = "https://github.com/Chhunneng";
+const dateTime = new Date()
 const OUTPUT = `# List of Developers in Cambodia
 
 This repository is a list of GitHub user or developer who are putting location in Cambodia.
@@ -79,6 +80,7 @@ This repository maintenance by [Chhunneng](${myProfileLine}) or [Chrea Chanchhun
 
 - Total: ${totalUsers}
 - Search Results: [GitHub Search](${searchResultsLink})
+- Last update: ${dateTime}
 
 ----
 
